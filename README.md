@@ -2,7 +2,7 @@ Blackjack Java Bot
 ==================
 
 This is a framework for coding Blackjack bots.
-It connects to the PHP server from [proof/blackjack-php-server](https://github.io/proof/blackjack-php-server).
+It connects to the PHP server from [proof/blackjack-php-server](https://github.com/proof/blackjack-php-server).
 
 One of the servers is hosted on [blackjack.nemanjamiljkovic.me](http://blackjack.nemanjamiljkovic.me).
 
