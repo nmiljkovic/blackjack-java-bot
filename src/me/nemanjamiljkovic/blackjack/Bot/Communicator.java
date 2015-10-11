@@ -85,8 +85,8 @@ public class Communicator {
      * @param message
      */
     private void parseMessage(JSONObject message) {
-        String alias = message.optString("alias", null);
-        JSONObject data = message.optJSONObject("data");
+        String alias = message.getString("alias");
+        JSONObject data = message.getJSONObject("data");
         if (data == null) {
             return;
         }
@@ -107,9 +107,9 @@ public class Communicator {
      * @param data
      */
     private void requestBet(JSONObject data) {
-        int minimum = data.optInt("minimumBet", 0);
-        int maximum = data.optInt("maximumBet", 100);
-        int money = data.optInt("money", 0);
+        int minimum = data.getInt("minimumBet");
+        int maximum = data.getInt("maximumBet");
+        int money = data.getInt("money");
 
         int bet = this.bot.bet(minimum, maximum, money);
 
@@ -124,7 +124,7 @@ public class Communicator {
      * @param data
      */
     private void requestAction(JSONObject data) {
-        int money = data.optInt("money");
+        int money = data.getInt("money");
         Hand hand = this.handFromInput(data.getJSONObject("playerHand"));
         Card dealerFaceUpCard = this.cardFromInput(data.getJSONObject("dealerCard"));
 
@@ -151,8 +151,8 @@ public class Communicator {
             return null;
         }
 
-        int rank = card.optInt("rank", 1);
-        String suit = card.optString("suit", "S");
+        int rank = card.getInt("rank");
+        String suit = card.getString("suit");
 
         switch (suit) {
             case "S":
