@@ -1,17 +1,11 @@
 package me.nemanjamiljkovic.blackjack.Bot;
 
 public class Card {
-    public enum Suit {
-        HEARTS, CLUBS, SPADES, DIAMONDS
-    };
-
     public static final int RANK_ACE = 1;
     public static final int RANK_JACK = 12;
     public static final int RANK_QUEEN = 13;
     public static final int RANK_KING = 14;
-
     private int rank;
-
     private Suit suit;
 
     public Card(int rank, Suit suit) {
@@ -39,7 +33,11 @@ public class Card {
         if (this.getRank() >= 10) {
             return 10;
         }
-        
+
         return this.getRank();
+    }
+
+    public enum Suit {
+        HEARTS, CLUBS, SPADES, DIAMONDS
     }
 }

@@ -14,11 +14,11 @@ public class SimpleBot implements BotInterface {
         if (hand.getValue() >= 9 && hand.getValue() <= 11) {
             return Action.DOUBLE_DOWN;
         }
-        
+
         if (hand.canSplit() && hand.getValue() > 8) {
             return Action.SPLIT;
         }
-        
+
         if (hand.getValue() < 16) {
             return Action.HIT;
         }
